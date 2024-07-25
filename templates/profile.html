@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ request.user.first_name }} {{ request.user.last_name }}</h1>
+
+{% for account in request.user.accounts.all %} 
+    <h3>Номер счета: {{ account.number }}</h3>
+    <h3>Баланс: {{ account.balance }}</h3>
+{% endfor %}
+
+{% endblock %}
